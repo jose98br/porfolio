@@ -347,14 +347,32 @@ function App() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
-                <span className="chip">{project.type}</span>
-                <h3>{project.title}</h3>
+                <div className="project-head">
+                  {project.icon && <img src={project.icon} alt={project.title} className="project-icon" />}
+                  <div>
+                    <span className="chip">{project.type}</span>
+                    <h3>{project.title}</h3>
+                    {project.period && <p className="project-period">{project.period}</p>}
+                  </div>
+                </div>
                 <p>{project.description}</p>
+                {project.highlights && (
+                  <ul className="project-highlights">
+                    {project.highlights.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                )}
                 <div className="stack-list">
                   {project.stack.map((tech) => (
                     <span key={tech}>{tech}</span>
                   ))}
                 </div>
+                {project.url && (
+                  <a className="project-link" href={project.url} target="_blank" rel="noreferrer">
+                    Ver proyecto
+                  </a>
+                )}
               </motion.article>
             ))}
           </div>

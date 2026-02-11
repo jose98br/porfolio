@@ -6,7 +6,7 @@ export const profile = {
   location: 'Palma del Rio, Cordoba',
   email: 'josemanuelbenitezruiz14@gmail.com',
   linkedin: 'https://www.linkedin.com/in/jose-manuel-benitez-ruiz/',
-  github: 'https://github.com/',
+  github: 'https://github.com/jose98br',
   heroImage: asset('Gemini_Generated_Image_o63kfio63kfio63k.png'),
   summary:
     'Desarrollador con experiencia en Python, desarrollo web y movil, automatizacion de procesos con n8n y construccion de APIs REST. Actualmente cursando Master en Data Science & Desarrollo de IA en Evolve Academy.',
@@ -21,11 +21,11 @@ export const stats = [
 export const skills = [
   {
     title: 'Lenguajes',
-    items: ['Python', 'JavaScript', 'TypeScript', 'SQL'],
+    items: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'Dart'],
   },
   {
-    title: 'Backend y APIs',
-    items: ['Django', 'Flask', 'Node.js', 'Express', 'Prisma ORM', 'JWT y CORS'],
+    title: 'Frameworks y desarrollo',
+    items: ['Flutter', 'Django', 'Flask', 'Node.js', 'Express', 'Prisma ORM'],
   },
   {
     title: 'Data & IA',
@@ -39,32 +39,48 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'Automatizaciones de negocio con n8n',
+    title: 'Laboro - Control de horas',
+    period: 'Ene 2026 - Feb 2026',
     description:
-      'Diseno de flujos para tareas repetitivas, integrando APIs y servicios externos para reducir trabajo manual y errores operativos.',
-    stack: ['n8n', 'Node.js', 'Webhooks', 'APIs REST'],
-    type: 'Proyecto profesional',
+      'App gratuita para registrar jornadas por horas y calcular cobro mensual. Funciona sin internet y sin cuentas.',
+    highlights: [
+      'Hasta 3 trabajos activos',
+      'Registro de horas con descansos no pagados',
+      'Calendario con dias trabajados por color',
+      'Informes por trabajo',
+      'Exportacion rapida a PDF y CSV',
+      'Todo local, sin cuentas ni internet',
+    ],
+    stack: ['Flutter', 'Dart', 'PDF', 'CSV', 'Offline-first'],
+    type: 'Proyecto destacado',
+    icon: asset('laboro-icon.svg'),
   },
   {
-    title: 'Aplicaciones web y movil para clientes',
+    title: 'Portfolio profesional web',
+    period: '2026',
     description:
-      'Desarrollo de soluciones full stack y app multiplataforma enfocadas en experiencia de usuario, rendimiento y mantenibilidad.',
-    stack: ['React', 'React Native', 'Expo', 'Express'],
-    type: 'Proyecto profesional',
+      'Portfolio en React con secciones de proyectos, experiencia, educacion y habilidades. Incluye animaciones y modo claro/oscuro.',
+    stack: ['React', 'JavaScript', 'Vite', 'Framer Motion', 'GitHub Pages'],
+    type: 'Proyecto web',
+    url: 'https://jose98br.github.io/porfolio/',
   },
   {
-    title: 'Backend Python y microservicios',
+    title: 'NASA NEO Analyzer',
+    period: '2025',
     description:
-      'Construccion de servicios backend con autenticacion, manejo de datos SQL/NoSQL y despliegue en contenedores Docker.',
-    stack: ['Python', 'Django', 'Flask', 'Docker', 'PostgreSQL'],
-    type: 'Proyecto tecnico',
+      'Exploracion de objetos cercanos a la Tierra con Python para consulta y analisis de datos astronomicos.',
+    stack: ['Python', 'APIs', 'Analisis de datos'],
+    type: 'Proyecto data',
+    url: 'https://github.com/jose98br/NASA-NEO-Analyzer-Exploraci-n-de-Objetos-Cercanos-a-la-Tierra',
   },
   {
-    title: 'Laboratorio de Data Science & IA',
+    title: 'Asistente virtual interestelar',
+    period: '2025',
     description:
-      'Implementacion de ejercicios y prototipos en analisis de datos, pipelines y modelos de IA como parte del master actual.',
-    stack: ['Python', 'Pandas', 'Scikit-learn', 'Jupyter'],
-    type: 'Proyecto formativo',
+      'Proyecto de asistente virtual con enfoque experimental para automatizar interacciones por comandos.',
+    stack: ['Python', 'Automatizacion'],
+    type: 'Proyecto IA',
+    url: 'https://github.com/jose98br/asistente-virtual-interestelar',
   },
 ];
 

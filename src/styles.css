@@ -485,9 +485,41 @@ h2 {
   font-size: 1.15rem;
 }
 
+.project-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  flex-shrink: 0;
+}
+
+.project-period {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
 .project-card p {
   margin-top: 10px;
   line-height: 1.6;
+}
+
+.project-highlights {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 5px;
+}
+
+.project-highlights li {
+  line-height: 1.45;
 }
 
 .stack-list {
@@ -503,6 +535,13 @@ h2 {
   padding: 6px 8px;
   font-size: 0.8rem;
   background: var(--surface-strong);
+}
+
+.project-link {
+  margin-top: 12px;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .skills-card h3 {

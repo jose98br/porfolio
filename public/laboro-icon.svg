@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Laboro icon">
+  <rect width="512" height="512" rx="128" fill="#206D55"/>
+  <rect x="156" y="170" width="46" height="172" fill="#ECECEC"/>
+  <rect x="156" y="296" width="124" height="46" fill="#ECECEC"/>
+  <circle cx="314" cy="308" r="72" fill="#E7A651"/>
+</svg>
