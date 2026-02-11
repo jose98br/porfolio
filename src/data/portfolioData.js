@@ -1,3 +1,5 @@
+const asset = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
+
 export const profile = {
   name: 'Jose Manuel Benitez Ruiz',
   role: 'Python Developer · Full Stack · Data Science & IA',
@@ -5,7 +7,7 @@ export const profile = {
   email: 'josemanuelbenitezruiz14@gmail.com',
   linkedin: 'https://www.linkedin.com/in/jose-manuel-benitez-ruiz/',
   github: 'https://github.com/',
-  heroImage: '/Gemini_Generated_Image_o63kfio63kfio63k.png',
+  heroImage: asset('Gemini_Generated_Image_o63kfio63kfio63k.png'),
   summary:
     'Desarrollador con experiencia en Python, desarrollo web y movil, automatizacion de procesos con n8n y construccion de APIs REST. Actualmente cursando Master en Data Science & Desarrollo de IA en Evolve Academy.',
 };
@@ -99,13 +101,13 @@ export const education = [
     title: 'Master en Data Science & Desarrollo de IA',
     institution: 'Evolve Academy',
     period: 'Enero 2026 - Actualidad',
-    logo: '/evolveacademy_logo.jpeg',
+    logo: asset('evolveacademy_logo.jpeg'),
   },
   {
     title: 'Programacion Python',
     institution: 'Escuela Musk de Programacion',
     period: 'Abril 2024 - Enero 2025',
-    logo: '/escuelamusk_logo.jpeg',
+    logo: asset('escuelamusk_logo.jpeg'),
   },
   {
     title: 'Grado Superior en Administracion y Finanzas',
