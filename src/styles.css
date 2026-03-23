@@ -51,7 +51,98 @@
   --accent-2:       oklch(65% 0.18 55);
   --accent-2-dim:   oklch(65% 0.18 55 / 0.10);
   --shadow:         0 4px 20px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0,0,0,0.04);
+  --icon-filter:    brightness(0) invert(0.3);
 }
+
+/* ─── Custom cursor ─── */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 9999;
+  translate: -50% -50%;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  pointer-events: none;
+  z-index: 9998;
+  translate: -50% -50%;
+  will-change: transform;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.3s,
+              border-color 0.3s;
+  opacity: 0.6;
+}
+
+.cursor-ring.cursor-hover {
+  width: 56px; height: 56px;
+  opacity: 1;
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Hide cursor elements on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ─── Word mask — line reveal base ─── */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.05em;
+}
+
+/* ─── Draw line — overline bar ─── */
+.draw-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  margin-right: 8px;
+  vertical-align: middle;
+  transform-origin: left center;
+  border-radius: 2px;
+}
+
+/* ─── 3D tilt card shine ─── */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255,255,255,0.06) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+.project-card:hover::after {
+  opacity: 1;
+}
+
 
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -742,6 +833,69 @@ h2 em { font-style: italic; color: var(--accent); }
   font-family: var(--font-mono);
   font-size: 0.88rem;
   color: var(--text);
+}
+
+/* ─── Marquee ─── */
+.marquee-outer {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  border-top: 0.5px solid var(--line);
+  border-bottom: 0.5px solid var(--line);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+  /* velocity skew via CSS custom property set by Lenis */
+  transform: skewX(calc(var(--sv, 0) * -0.4deg));
+  transition: transform 0.1s linear;
+}
+
+.marquee-outer:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* override: keep skew on top of translateX via separate property */
+@supports (animation-timeline: scroll()) {
+  .marquee-track {
+    will-change: transform;
+  }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--secondary);
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-item::after {
+  content: '·';
+  position: absolute;
+  right: 0;
+  color: var(--line);
+}
+
+.marquee-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.65;
+  filter: var(--icon-filter, none);
 }
 
 /* ─── Footer ─── */
